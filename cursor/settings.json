@@ -1,0 +1,13 @@
+{
+    "window.commandCenter": 1,
+    "workbench.colorTheme": "Theme",
+    "editor.wordWrap": "on",
+    "cursor.composer.renderPillsInsteadOfBlocks": true,
+    "cursor.composer.collapsePaneInputBoxPills": true,
+    "jupyter.interactiveWindow.creationMode": "perFile",
+    "workbench.iconTheme": "material-icon-theme",
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "cursor.composer.shouldChimeAfterChatFinishes": true
+}
