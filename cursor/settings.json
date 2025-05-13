@@ -1,13 +1,130 @@
 {
-    "window.commandCenter": 1,
-    "workbench.colorTheme": "Theme",
-    "editor.wordWrap": "on",
+    // --- UI / window ---
+    "window.commandCenter": true,
+
+    // --- Terminal ---
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+
+    // --- Extensions & Cursor specific ---
+    "extensions.ignoreRecommendations": true,
+    "cursor.chat.smoothStreaming": true,
+    "cursor.cmdk.useThemedDiffBackground": true,
+    "cursor.general.enableShadowWorkspace": true,
+    "cursor.general.gitGraphIndexing": "enabled",
+    "cursor.diffs.useCharacterLevelDiffs": true,
     "cursor.composer.renderPillsInsteadOfBlocks": true,
     "cursor.composer.collapsePaneInputBoxPills": true,
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "cursor.composer.shouldAllowCustomModes": true,
+
+    // --- Layout / density ---
+    "window.density.editorTabHeight": "compact",
+
+    // --- Jupyter ---
     "jupyter.interactiveWindow.creationMode": "perFile",
+    "jupyter.askForKernelRestart": false,
+
+    // --- Explorer & workbench ---
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmPasteNative": false,
+    "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "material-icon-theme",
+    "diffEditor.hideUnchangedRegions.enabled": true,
+
+    // --- Editor defaults ---
+    "editor.wordWrap": "on",
+    "editor.accessibilitySupport": "off",
+
+    // --- Language-specific ---
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+
+    // --- Cursor-style charcoal + separator lines on every surface ---------------
+    "workbench.colorCustomizations": {
+        /* EDITOR + groups ------------------------------------------------------- */
+        "editor.foreground":                     "#c0c1c7", //text
+        "editor.background":                     "#1d1d1d",
+        "editorGutter.background":               "#1A1A1A",
+        "editorGroup.emptyBackground":           "#1A1A1A",
+        "editorGroupHeader.tabsBackground":      "#1A1A1A",
+        // "editorGroup.background": "#1A1A1A",   // ← works, but schema warns
+
+        /* SIDE CHROME ----------------------------------------------------------- */
+        "sideBar.background":                    "#1A1A1A",
+        "activityBar.background":                "#1A1A1A",
+        "titleBar.activeBackground":             "#1A1A1A",
+        "titleBar.inactiveBackground":           "#1A1A1A",
+
+        /* TABS & STATUS BAR ----------------------------------------------------- */
+        "tab.activeBackground":                  "#1A1A1A",
+        "tab.inactiveBackground":                "#1A1A1A",
+        "statusBar.background":                  "#1A1A1A",
+        "statusBar.noFolderBackground":          "#1A1A1A",
+        "statusBar.debuggingBackground":         "#1A1A1A",
+
+        /* PANEL + TERMINAL ------------------------------------------------------ */
+        "panel.background":                      "#1d1d1d",
+        "terminal.background":                   "#1f1f1f",
+
+        /* CURSOR-STYLE MID-GREY BORDERS ---------------------------------------- */
+        "activityBar.border":                    "#2A2A2A",
+        "sideBar.border":                        "#2A2A2A",
+        "editorGroup.border":                    "#2A2A2A",
+        "editorGroupHeader.border":              "#2A2A2A",
+        "tab.border":                            "#2A2A2A",
+        "panel.border":                          "#2A2A2A",
+        "terminal.border":                       "#2A2A2A",
+        "statusBar.border":                      "#2A2A2A",
+        "titleBar.border":                       "#2A2A2A",
+        "sash.hoverBorder":                      "#2A2A2A",
+        
+        /* GREEN BUTTONS --------------------------------------------------------- */
+        "button.foreground":                     "#FFFFFF",
+        "button.secondaryBackground":            "#0f3bff",
+        "button.secondaryHoverBackground":       "#0077ff",
+
+        // ── Dim the indent guides ───────────────────────────────
+        "editorIndentGuide.background1":         "#3a3a3a50",   // inactive guides
+        "editorIndentGuide.activeBackground1":   "#5a5a5a60",    // guide at the caret level
+
+        /* OPTIONAL – uncomment to polish further -------------------------------- */
+        "scrollbarSlider.background":            "#2A2A2A88",
+        "scrollbarSlider.hoverBackground":       "#2A2A2ACC",
+        "pickerGroup.border":                    "#2A2A2A",
+        "quickInput.background":                 "#1A1A1A"
+    }
+    ,
+    
+
+    // --- File / search excludes ---
     "files.exclude": {
+        "**/.venv": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/.pytest_cache": true
+    },
+    "python.analysis.exclude": [
+        ".venv"
+    ],
+    "search.exclude": {
+        "**/.venv": true,
         "**/__pycache__": true
     },
-    "cursor.composer.shouldChimeAfterChatFinishes": true
+
+    // --- Remote SSH profiles ---
+    "remote.SSH.remotePlatform": {
+        "seven7s-ec2": "linux",
+        "seven7s": "linux"
+    },
+    "workbench.colorTheme": "Theme",
+    "update.releaseTrack": "prerelease"
 }
