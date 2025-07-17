@@ -1,6 +1,11 @@
 {
+    // ┌────────────────────────────────────────────────────────────────────────────────────┐
+    // │ CORE FUNCTIONALITY SETTINGS                                                        │
+    // └────────────────────────────────────────────────────────────────────────────────────┘
+
     // --- UI / window ---
     "window.commandCenter": true,
+    "window.zoomPerWindow": false,
 
     // --- Terminal ---
     "terminal.integrated.enableMultiLinePasteWarning": "never",
@@ -29,7 +34,6 @@
     "explorer.confirmDelete": false,
     "explorer.confirmPasteNative": false,
     "workbench.editor.enablePreview": false,
-    "workbench.iconTheme": "material-icon-theme",
     "diffEditor.hideUnchangedRegions.enabled": true,
 
     // --- Editor defaults ---
@@ -42,63 +46,6 @@
         "editor.formatOnSave": true
     },
 
-    // --- Cursor-style charcoal + separator lines on every surface ---------------
-    "workbench.colorCustomizations": {
-        /* EDITOR + groups ------------------------------------------------------- */
-        "editor.foreground":                     "#c0c1c7", //text
-        "editor.background":                     "#1d1d1d",
-        "editorGutter.background":               "#1A1A1A",
-        "editorGroup.emptyBackground":           "#1A1A1A",
-        "editorGroupHeader.tabsBackground":      "#1A1A1A",
-        // "editorGroup.background": "#1A1A1A",   // ← works, but schema warns
-
-        /* SIDE CHROME ----------------------------------------------------------- */
-        "sideBar.background":                    "#1A1A1A",
-        "activityBar.background":                "#1A1A1A",
-        "titleBar.activeBackground":             "#1A1A1A",
-        "titleBar.inactiveBackground":           "#1A1A1A",
-
-        /* TABS & STATUS BAR ----------------------------------------------------- */
-        "tab.activeBackground":                  "#1A1A1A",
-        "tab.inactiveBackground":                "#1A1A1A",
-        "statusBar.background":                  "#1A1A1A",
-        "statusBar.noFolderBackground":          "#1A1A1A",
-        "statusBar.debuggingBackground":         "#1A1A1A",
-
-        /* PANEL + TERMINAL ------------------------------------------------------ */
-        "panel.background":                      "#1d1d1d",
-        "terminal.background":                   "#1f1f1f",
-
-        /* CURSOR-STYLE MID-GREY BORDERS ---------------------------------------- */
-        "activityBar.border":                    "#2A2A2A",
-        "sideBar.border":                        "#2A2A2A",
-        "editorGroup.border":                    "#2A2A2A",
-        "editorGroupHeader.border":              "#2A2A2A",
-        "tab.border":                            "#2A2A2A",
-        "panel.border":                          "#2A2A2A",
-        "terminal.border":                       "#2A2A2A",
-        "statusBar.border":                      "#2A2A2A",
-        "titleBar.border":                       "#2A2A2A",
-        "sash.hoverBorder":                      "#2A2A2A",
-        
-        /* GREEN BUTTONS --------------------------------------------------------- */
-        "button.foreground":                     "#FFFFFF",
-        "button.secondaryBackground":            "#0f3bff",
-        "button.secondaryHoverBackground":       "#0077ff",
-
-        // ── Dim the indent guides ───────────────────────────────
-        "editorIndentGuide.background1":         "#3a3a3a50",   // inactive guides
-        "editorIndentGuide.activeBackground1":   "#5a5a5a60",    // guide at the caret level
-
-        /* OPTIONAL – uncomment to polish further -------------------------------- */
-        "scrollbarSlider.background":            "#2A2A2A88",
-        "scrollbarSlider.hoverBackground":       "#2A2A2ACC",
-        "pickerGroup.border":                    "#2A2A2A",
-        "quickInput.background":                 "#1A1A1A"
-    }
-    ,
-    
-
     // --- File / search excludes ---
     "files.exclude": {
         "**/.venv": true,
@@ -110,14 +57,20 @@
         "**/Thumbs.db": true,
         "**/__pycache__": true,
         "**/*.pyc": true,
-        "**/.pytest_cache": true
+        "**/.pytest_cache": true,
+        "**/.ruff_cache": true,
+        "**/.mypy_cache": true
     },
-    "python.analysis.exclude": [
-        ".venv"
+    "python.analysis.exclude": [   // This is for Pylance/Python analysis, not file explorer
+        "**/venv",                 // More robust to match any venv or .venv
+        "**/.venv"
     ],
     "search.exclude": {
-        "**/.venv": true,
-        "**/__pycache__": true
+        "**/.venv": true,          // Changed: Match .venv anywhere
+        "**/__pycache__": true,    // Changed: Corrected name and match anywhere
+        "**/.pytest_cache": true,  // Added .pytest_cache here too
+        "**/.git": true,           // Good to exclude from search
+        "**/*.pyc": true           // Good to exclude from search
     },
 
     // --- Remote SSH profiles ---
@@ -125,6 +78,209 @@
         "seven7s-ec2": "linux",
         "seven7s": "linux"
     },
-    "workbench.colorTheme": "Theme",
-    "update.releaseTrack": "prerelease"
+    "update.releaseTrack": "prerelease",
+    "files.saveConflictResolution": "overwriteFileOnDisk",
+    "workbench.iconTheme": "material-icon-theme",
+
+    // -- UI Color Settings ---
+    "workbench.colorCustomizations": {
+        "editor.background": "#151515",
+        "terminal.background": "#151515",
+        "panel.background": "#1a1a1a",
+        "editorGutter.background": "#151515",
+        "editorIndentGuide.background1": "#3a3a3a50",
+        "editorIndentGuide.activeBackground1": "#5a5a5a60",
+        "sideBar.background": "#151515"
+    },
+
+    // --- Editor Token Color Customizations ---
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "punctuation.definition.heading.markdown",
+                "settings": {
+                    "foreground": "#FF6B6B"
+                }
+            },
+            {
+                "scope": "entity.name.section.markdown",
+                "settings": {
+                    "foreground": "#FF6B6B",
+                    "fontStyle": "bold"
+                }
+            }
+        ]
+    },
+    "window.zoomLevel": -0.5,
+
+    // ┌────────────────────────────────────────────────────────────────────────────────────┐
+    // │ STYLING & APPEARANCE SETTINGS                                                      │
+    // └────────────────────────────────────────────────────────────────────────────────────┘
+
+    // // --- Theme & Icons ---
+    // "workbench.iconTheme": "material-icon-theme",
+    // "workbench.colorTheme": "Theme",
+
+    // // --- Font Settings ---
+    // // "editor.fontFamily": "'JetBrains Mono', monospace",
+    // // "editor.fontFamily": "'IBM Plex Mono', monospace",
+    // // "editor.fontLigatures": false,   // flip to true whenever you want ligatures
+
+    // // --- Cursor-style charcoal + separator lines on every surface ---
+    // "workbench.colorCustomizations": {
+    //     /* EDITOR + groups ------------------------------------------------------- */
+    //     "editor.foreground":                     "#aaaaaa", // text color in editor
+    //     "editor.background":                     "#161616",
+    //     "editorGutter.background":               "#1A1A1A",
+    //     "editorGroup.emptyBackground":           "#161616",
+    //     "editorGroupHeader.tabsBackground":      "#161616",
+    //     // "editorGroup.background": "#1A1A1A",   // ← works, but schema warns
+
+    //     /* SIDE CHROME (left-hand vertical UI) ---------------------------------- */
+    //     "sideBar.background":                    "#161616",
+    //     "activityBar.background":                "#161616",
+    //     "titleBar.activeBackground":             "#161616",
+    //     "titleBar.inactiveBackground":           "#161616",
+
+    //     /* TABS & STATUS BAR ----------------------------------------------------- */
+    //     "tab.activeBackground":                  "#202020",
+    //     "tab.inactiveBackground":                "#161616",
+    //     "statusBar.background":                  "#161616",
+    //     "statusBar.noFolderBackground":          "#161616",
+    //     "statusBar.debuggingBackground":         "#161616",
+
+    //     /* PANEL + TERMINAL ------------------------------------------------------ */
+    //     "panel.background":                      "#161616",
+    //     "terminal.background":                   "#161616",
+
+    //     /* CURSOR-STYLE MID-GREY BORDERS ---------------------------------------- */
+    //     "activityBar.border":                    "#161616",
+    //     "sideBar.border":                        "#161616",
+    //     "editorGroup.border":                    "#161616",
+    //     "editorGroupHeader.border":              "#161616",
+    //     "tab.border":                            "#161616",
+    //     "panel.border":                          "#161616",
+    //     "terminal.border":                       "#161616",
+    //     "statusBar.border":                      "#161616",
+    //     "titleBar.border":                       "#161616",
+    //     "sash.hoverBorder":                      "#161616",
+        
+    //     /* GREEN BUTTONS --------------------------------------------------------- */
+    //     "button.foreground":                     "#FFFFFF",
+    //     "button.secondaryBackground":            "#0f3bff",
+    //     "button.secondaryHoverBackground":       "#0077ff",
+
+    //     /* ── Dim the indent guides ─────────────────────────────── */
+    //     "editorIndentGuide.background1":         "#3a3a3a50",   // inactive guides
+    //     "editorIndentGuide.activeBackground1":   "#5a5a5a60",   // guide at the caret level
+
+    //     /* OPTIONAL – uncomment to polish further -------------------------------- */
+    //     "scrollbarSlider.background":            "#202020",
+    //     "scrollbarSlider.hoverBackground":       "#202020",
+    //     "pickerGroup.border":                    "#1A1A1A",
+    //     "quickInput.background":                 "#1A1A1A",
+
+    //     /***************************************************************************
+    //      *  The lines below are all possible UI elements you are not currently
+    //      *  editing. Simply remove the leading `//` to override them. Fill in
+    //      *  whatever hex value you want, so they match Cursor Dark exactly (or
+    //      *  any other color you prefer).
+    //      **************************************************************************/
+
+    //     // /* SIDEBAR & ACTIVITY BAR Foreground ------------------------------------ */
+    //     // "sideBar.foreground":                  "#CCCCCC", // change to Cursor Dark's sidebar text color
+    //     // "activityBar.foreground":              "#FFFFFF", // icon/text color on activity bar
+    //     // "activityBarBadge.background":         "#007ACC", // badge backgrounds on activity bar
+    //     // "activityBarBadge.foreground":         "#FFFFFF",
+
+    //     // /* TITLE BAR Foreground ------------------------------------------------- */
+    //     // "titleBar.activeForeground":           "#CCCCCC", // title-bar text when window is focused
+    //     // "titleBar.inactiveForeground":         "#888888", // when window is unfocused
+
+    //     // /* STATUS BAR Foreground ------------------------------------------------ */
+    //     // "statusBar.foreground":                "#bbbbbb", // normal status-bar text
+    //     // "statusBar.noFolderForeground":        "#CCCCCC",
+    //     // "statusBar.debuggingForeground":       "#FFFFFF",
+
+    //     // /* TABS Foreground ------------------------------------------------------- */
+    //     "tab.activeForeground":                "#FFFFFF",
+    //     // "tab.inactiveForeground":              "#888888",
+    //     // "tab.activeBorder":                    "#ffffff63", // underline on the active tab
+    //     // "tab.inactiveBorder":                  "#282828",
+
+    //     // /* PANEL TITLES (e.g. Output, Terminal, Debug) -------------------------- */
+    //     // "panelTitle.activeForeground":         "#CCCCCC",
+    //     // "panelTitle.inactiveForeground":       "#777777",
+
+    //     // /* TERMINAL Colors ------------------------------------------------------ */
+    //     "terminal.foreground":                 "#aaaaaa", // default text in terminal
+    //     // "terminal.ansiBlack":                  "#000000",
+    //     // "terminal.ansiRed":                    "#cd3131",
+    //     // "terminal.ansiGreen":                  "#0dbc79",
+    //     // "terminal.ansiYellow":                 "#e5e510",
+    //     // "terminal.ansiBlue":                   "#2472c8",
+    //     // "terminal.ansiMagenta":                "#bc3fbc",
+    //     // "terminal.ansiCyan":                   "#11a8cd",
+    //     // "terminal.ansiWhite":                  "#e5e5e5",
+    //     // "terminal.ansiBrightBlack":            "#666666",
+    //     // "terminal.ansiBrightRed":              "#f14c4c",
+    //     // "terminal.ansiBrightGreen":            "#23d18b",
+    //     // "terminal.ansiBrightYellow":           "#f5f543",
+    //     // "terminal.ansiBrightBlue":             "#3b8eea",
+    //     // "terminal.ansiBrightMagenta":          "#d670d6",
+    //     // "terminal.ansiBrightCyan":             "#29b8db",
+    //     // "terminal.ansiBrightWhite":            "#e5e5e5",
+
+    //     // /* PANEL/VIEW Components ------------------------------------------------ */
+    //     // "panelTitle.activeBorder":             "#007ACC",
+    //     // "panelTitle.inactiveBorder":           "#282828",
+    //     // "panelSectionHeader.background":       "#2A2A2A",
+    //     // "panelSectionHeader.foreground":       "#CCCCCC",
+
+    //     // /* SIDE BAR Sections ---------------------------------------------------- */
+    //     // "sideBarSectionHeader.background":     "#2A2A2A",
+    //     // "sideBarSectionHeader.foreground":     "#CCCCCC",
+    //     // "sideBarTitle.foreground":             "#CCCCCC",
+
+    //     // /* ACTIVITY BAR BADGES -------------------------------------------------- */
+    //     // "activityBarBadge.foreground":         "#FFFFFF",
+    //     // "activityBarBadge.background":         "#007ACC",
+
+    //     // /* SCROLLBAR THUMB ------------------------------------------------------ */
+    //     // "scrollbarSlider.activeBackground":    "#2A2A2ACC",
+    //     // "scrollbarSlider.hoverBackground":     "#2A2A2ACC",
+    //     // "scrollbarSlider.background":          "#2A2A2A88",
+
+    //     // /* QUICK PICKER / INPUT ------------------------------------------------- */
+    //     // "quickInput.foreground":               "#CCCCCC",
+    //     // "quickInput.placeholderForeground":    "#888888",
+    //     // "quickInputTitle.background":          "#2A2A2A",
+    //     // "quickInputTitle.foreground":          "#CCCCCC",
+
+    //     // /* NOTIFICATIONS -------------------------------------------------------- */
+    //     // "notificationCenterHeader.foreground": "#CCCCCC",
+    //     // "notificationCenterHeader.background": "#2A2A2A",
+    //     // "notificationCenter.border":           "#282828",
+
+    //     // /* BADGES ---------------------------------------------------------------- */
+    //     // "badge.background":                    "#007ACC",
+    //     // "badge.foreground":                    "#FFFFFF",
+
+    //     // /* SIDE BAR TREE -------------------------------------------------------- */
+    //     // "tree.indentGuidesStroke":             "#3A3A3A",
+    //     // "list.activeSelectionBackground":      "#094771",
+    //     // "list.activeSelectionForeground":      "#FFFFFF",
+    //     // "list.hoverBackground":                "#2A2A2A",
+    //     // "list.hoverForeground":                "#CCCCCC",
+
+    //     // /* EDITOR GUTTER -------------------------------------------------------- */
+    //     // "editorLineNumber.foreground":         "#858585",
+    //     // "editorGlyphMargin.background":        "#1E1E1E",
+    //     // "editorLineNumber.activeForeground":   "#C3C3C3",
+
+    //     // /* EDITOR CURSOR -------------------------------------------------------- */
+    //     // "editorCursor.foreground":             "#AEAFAD",
+    //     // "editor.selectionBackground":          "#264F78",
+    //     // "editor.inactiveSelectionBackground":  "#3A3D41"
+    // },
 }
