@@ -1,0 +1,54 @@
+[
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "cmd-1": "editor::ToggleComments",
+    },
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "cmd-/": null,
+    },
+  },
+  // {
+  //   "context": "ProjectPanel",
+  //   "bindings": {
+  //     "ctrl-shift-c": "project_panel::CollapseAllEntries",
+  //   },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "shift-enter": ["terminal::SendKeystroke", "\\\\\\n"],
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-shift-c": [
+        "action::Sequence",
+        [
+          // climb to the root (repeat a bunch; harmless once you're at root)
+          "project_panel::SelectParent",
+          "project_panel::SelectParent",
+          "project_panel::SelectParent",
+          "project_panel::SelectParent",
+          "project_panel::SelectParent",
+          "project_panel::SelectParent",
+          "project_panel::SelectParent",
+          "project_panel::SelectParent",
+          "project_panel::SelectParent",
+          "project_panel::SelectParent",
+          "project_panel::SelectParent",
+          "project_panel::SelectParent",
+
+          // collapse everything...
+          "project_panel::CollapseAllEntries",
+
+          // ...then re-expand the selected entry (which should now be the root)
+          "project_panel::ExpandSelectedEntry",
+        ],
+      ],
+    },
+  },
+]

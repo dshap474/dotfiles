@@ -1,0 +1,55 @@
+{
+  "entries": [
+    {
+      "source": "/Users/daniel/.codex/agents/architect.toml",
+      "source_hash": "sha256:ae406b0b00f9a4381e38de350fa228463f6c2649ac8c742be1b0afa3e3461c09",
+      "status": "active",
+      "target": "/Users/daniel/.claude/agents/architect.md",
+      "target_hash": "sha256:f24232d119fdfcf2422337dc90cdcf03628628a5078e2c5082a458de5c47bec7"
+    },
+    {
+      "source": "/Users/daniel/.codex/agents/docs.toml",
+      "source_hash": "sha256:9f8e0e9d7b819d6cae72f444c7b61bb5386779057ef23d937c4d23648466c367",
+      "status": "active",
+      "target": "/Users/daniel/.claude/agents/docs.md",
+      "target_hash": "sha256:966c983c192f17a88ede91c9c498cb357f8d9f94c7415a0599edc67d742c270b"
+    },
+    {
+      "source": "/Users/daniel/.codex/agents/explorer.toml",
+      "source_hash": "sha256:c234bd6b875b7aff11c255d9e9f6481d50c17fc600bcac5aa582ab99cb9ad78e",
+      "status": "active",
+      "target": "/Users/daniel/.claude/agents/explorer.md",
+      "target_hash": "sha256:0e9d1c17476a9748d7903c2df7037a91840ef7a422940f726ea9b3b71fe83157"
+    },
+    {
+      "source": "/Users/daniel/.codex/agents/oracle.toml",
+      "source_hash": "sha256:08b25b4cfa985f5c2fee0967743a37dd6e51e4d1ca2d23254e406e4d934ad253",
+      "status": "active",
+      "target": "/Users/daniel/.claude/agents/oracle.md",
+      "target_hash": "sha256:a2e9ac8f0bb4ad22445bff13064a586906c7b87f9064d44848942e9e0d14cc91"
+    },
+    {
+      "source": "/Users/daniel/.codex/agents/reviewer.toml",
+      "source_hash": "sha256:9b1a9d29235ecda89c6c0fdf8721d1fc0f45a499a2ccb393bf9a5c13f828b2d1",
+      "status": "active",
+      "target": "/Users/daniel/.claude/agents/reviewer.md",
+      "target_hash": "sha256:e9f6969edb89df8526edd3c697ab597b513bee6ed7924b66cf4fef03c204bdc5"
+    },
+    {
+      "source": "/Users/daniel/.codex/agents/web.toml",
+      "source_hash": "sha256:68375aab72cbe922ed0783b98462a71da5f2f43dea1e7290002ff8fb411d04fe",
+      "status": "active",
+      "target": "/Users/daniel/.claude/agents/web.md",
+      "target_hash": "sha256:abbc8cfe273b30c71343bb97d5dab69d2d0cbd4d78be856167b401114cc815cd"
+    },
+    {
+      "source": "/Users/daniel/.codex/agents/worker.toml",
+      "source_hash": "sha256:915c5188841185518efa102f557b28dbe9843c3a9d55c40e25e6aa54bbf21116",
+      "status": "active",
+      "target": "/Users/daniel/.claude/agents/worker.md",
+      "target_hash": "sha256:7a9db2ad7231687800015e9684a997a0eddeb7b494908ba2b98881fae555efa5"
+    }
+  ],
+  "kind": "agents",
+  "managed_by": "codex-to-claude-port-system"
+}

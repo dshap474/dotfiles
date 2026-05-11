@@ -1,0 +1,276 @@
+# ============================================================================
+# Core
+# ============================================================================
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+plan_mode_reasoning_effort = "high"
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+tool_output_token_limit = 25000
+personality = "pragmatic"
+web_search = "live"
+project_doc_fallback_filenames = ["AGENTS.md"]
+suppress_unstable_features_warning = true
+
+# ============================================================================
+# Project Permissions
+# ============================================================================
+
+notify = ["/Users/daniel/.codex/plugins/cache/openai-bundled/computer-use/1.0.755/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
+[projects."/Users/daniel/Developer"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/.codex"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/numereng"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/bwr-sales-agent"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/zz_other/ttf-agent"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/seven7s"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/s7-quant"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/blockworks-mcp-server"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/blockworks-ai"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/ai-influencer"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/ttf-agent"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/job-agent"]
+trust_level = "trusted"
+
+[projects."/Users/daniel"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/_dev"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-04-20-do-i-have-vercel-cli-credentials"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-04-20-files-mentioned-by-the-user-screenshot"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/bwr-plots"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-04-21-what-is-the-ssh-name-to"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/__MEMORY__"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/bwr-tools"]
+trust_level = "trusted"
+
+[projects."/"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/zz_active/cartographer/runs"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/__MEMORY__/_tools/cartographer/runs"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/__MEMORY__/_tools/cartographer/runs/reinforcement-learning-for-finance"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/__MEMORY__/_tools/cartographer/runs/reinforcement-learning-for-finance/v4-full-from-prepared.cartographer/source/chapters"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/__MEMORY__/_tools/cartographer/runs/reinforcement-learning-for-finance/v5-full-from-prepared.cartographer/source/chapters"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/__MEMORY__/_tools/cartographer/runs/extract-smoke-md"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/__MEMORY__/_tools/cartographer/runs/extract-smoke"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/__MEMORY__/_tools/cartographer/runs/paddle-formula-bakeoffs/reinforcement-learning-for-finance/v01/codex_adjudications"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/__MEMORY__/_tools/cartographer/runs/paddle-formula-bakeoffs/reinforcement-learning-for-finance/v01/codex_adjudications_low"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/__MEMORY__/_tools/cartographer/runs/paddle-formula-bakeoffs/reinforcement-learning-for-finance/v01/codex_adjudications_medium"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/code/symphony-workspaces/job-agent/DSH-5"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/code/symphony-workspaces/job-agent/DSH-6"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/zz_active/msa-work"]
+trust_level = "trusted"
+
+[projects."/private/tmp/qpm-ch01-extract/artifacts/codex_adjudications"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/zz_active/msa-work/msa-change-verification"]
+trust_level = "trusted"
+
+[projects."/private/tmp/cartographer-qpm-artifact-recovery/artifacts/codex_adjudications"]
+trust_level = "trusted"
+
+[projects."/private/tmp/cartographer-qpm-artifact-recovery-final/artifacts/codex_adjudications"]
+trust_level = "trusted"
+
+[projects."/private/tmp/cartographer-qpm-artifact-recovery-safe-final/artifacts/codex_adjudications"]
+trust_level = "trusted"
+
+[projects."/private/tmp/cartographer-qpm-section-1-2-recheck/artifacts/codex_adjudications"]
+trust_level = "trusted"
+
+[projects."/private/tmp/cartographer-qpm-section-1-2-qc-clean/artifacts/codex_adjudications"]
+trust_level = "trusted"
+
+[projects."/private/tmp/cartographer-qpm-section-1-2-hybrid/artifacts/codex_adjudications"]
+trust_level = "trusted"
+
+[projects."/private/tmp/cartographer-qpm-section-1-2-hybrid-rerun/artifacts/codex_adjudications"]
+trust_level = "trusted"
+
+[projects."/private/tmp/cartographer-qpm-section-1-2-manual-codex"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-05/can-you-get-this-to-1500"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-06/audit-skill-users-daniel-codex-skills"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-06/codex-to-claude-skill-porter-users"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-06/how-does-this-subagnet-work-users"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/zz_active/mike-plots"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-07/can-you-git-clone-this-to"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/IR-Context"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-08/can-you-use-imagegen-to-make"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-08/users-daniel-developer-bwr-tools-packages"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-08/users-daniel-developer-memory-tools-cartographer"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-08/can-you-make-this-fit-my"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/zz_active/agent-bench"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Developer/__JARVIS__"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-09/to-view-keyboard-shortcuts-press-question"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-09/files-mentioned-by-the-user-screenshot"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-10/users-daniel-developer-s7-quant-packages"]
+trust_level = "trusted"
+
+[projects."/Users/daniel/Documents/Codex/2026-05-10/how-does-users-daniel-codex-skills"]
+trust_level = "trusted"
+
+# ============================================================================
+# MCP & Plugins
+# ============================================================================
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-05-11T00:21:23Z"
+source_type = "local"
+source = "/Users/daniel/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-05-08T15:31:37Z"
+source_type = "local"
+source = "/Users/daniel/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."google-drive@openai-curated"]
+enabled = true
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+# ============================================================================
+# Features
+# ============================================================================
+[features]
+ghost_commit = false
+unified_exec = true
+apply_patch_freeform = true
+shell_snapshot = true
+multi_agent = true
+prevent_idle_sleep = true
+apps = true
+voice_transcription = true
+js_repl = true
+codex_hooks = true
+tui_app_server = true
+
+# === Memories ===
+memories = true
+chronicle = false
+terminal_resize_reflow = true
+
+[sandbox_workspace_write]
+network_access = true
+
+[sandbox_permitted]
+network_access = true
+
+[tui]
+status_line = ["model-with-reasoning", "project-root", "git-branch", "context-used"]
+theme = "catppuccin-mocha"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+# ============================================================================
+# Agents
+# ============================================================================
+[agents]
+max_threads = 16
+max_depth = 1
