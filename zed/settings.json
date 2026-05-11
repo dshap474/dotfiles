@@ -1,0 +1,233 @@
+{
+  // --- MATCHING CURSOR ZOOM (-1) & DENSITY ---
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+    },
+    "factory-droid": {
+      "type": "registry",
+    },
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "show_wrap_guides": true,
+  "buffer_line_height": "standard",
+
+  // Hold Cmd+W to close tabs; when no tabs left, keep window open
+  "when_closing_with_no_tabs": "keep_window_open",
+
+  "icon_theme": {
+    "mode": "light",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme",
+  },
+  "ui_font_size": 14.5,
+  "ui_font_weight": 100.0,
+  "ui_font_family": ".ZedSans",
+
+  "buffer_font_size": 12.5,
+  "buffer_font_weight": 300.0,
+  "buffer_font_family": "JetBrainsMonoNL Nerd Font Mono",
+
+  // --- Markdown THEME ---
+  "markdown_preview_font_family": "Georgia",
+  "markdown_preview_theme": "Solarized Light",
+
+  // --- THEME ---
+  "theme": {
+    "mode": "light",
+    "light": "cursor-for-zed Dark",
+    "dark": "cursor-for-zed Dark",
+  },
+
+  // --- SEMANTIC HIGHLIGHTING ---
+  "semantic_tokens": "combined",
+  "global_lsp_settings": {
+    "semantic_token_rules": [
+      {
+        "token_type": "property",
+        "token_modifiers": ["declaration"],
+        "style": ["property.type_member", "property"],
+      },
+      {
+        "token_type": "property",
+        "token_modifiers": ["definition"],
+        "style": ["property.type_member", "property"],
+      },
+      {
+        "token_type": "function",
+        "token_modifiers": ["defaultLibrary"],
+        "style": ["function.builtin", "keyword", "function"],
+      },
+      {
+        "token_type": "function",
+        "token_modifiers": ["builtin"],
+        "style": ["function.builtin", "keyword", "function"],
+      },
+      {
+        "token_type": "method",
+        "token_modifiers": ["defaultLibrary"],
+        "style": ["function.builtin", "keyword", "function.method", "function"],
+      },
+      {
+        "token_type": "method",
+        "token_modifiers": ["builtin"],
+        "style": ["function.builtin", "keyword", "function.method", "function"],
+      },
+      {
+        "token_type": "namespace",
+        "token_modifiers": ["declaration"],
+        "style": ["namespace", "type"],
+      },
+      {
+        "token_type": "class",
+        "style": ["class", "type.class", "type"],
+      },
+      {
+        "token_type": "type",
+        "style": ["type", "class", "type.class"],
+      },
+      {
+        "token_type": "interface",
+        "style": ["type.interface", "type", "class"],
+      },
+      {
+        "token_type": "typeParameter",
+        "style": ["type", "class"],
+      },
+      {
+        "token_type": "namespace",
+        "token_modifiers": ["readonly"],
+        "style": ["namespace", "type"],
+      },
+      {
+        "token_type": "namespace",
+        "style": ["primary", "variable"],
+      },
+      {
+        "token_type": "function",
+        "token_modifiers": ["declaration"],
+        "style": ["function.definition", "function"],
+      },
+      {
+        "token_type": "function",
+        "token_modifiers": ["definition"],
+        "style": ["function.definition", "function"],
+      },
+      {
+        "token_type": "method",
+        "token_modifiers": ["declaration"],
+        "style": ["function.definition", "function.method", "function"],
+      },
+      {
+        "token_type": "method",
+        "token_modifiers": ["definition"],
+        "style": ["function.definition", "function.method", "function"],
+      },
+      {
+        "token_type": "function",
+        "style": ["function"],
+      },
+      {
+        "token_type": "method",
+        "style": ["function.method", "function"],
+      },
+      {
+        "token_type": "variable",
+        "token_modifiers": ["constant", "defaultLibrary"],
+        "style": ["primary", "variable"],
+      },
+      {
+        "token_type": "variable",
+        "token_modifiers": ["readonly", "defaultLibrary"],
+        "style": ["primary", "variable"],
+      },
+      {
+        "token_type": "variable",
+        "token_modifiers": ["defaultLibrary"],
+        "style": ["primary", "variable"],
+      },
+      {
+        "token_type": "variable",
+        "token_modifiers": ["readonly"],
+        "style": ["variable.special", "constant"],
+      },
+      {
+        "token_type": "variable",
+        "token_modifiers": ["constant"],
+        "style": ["variable.special", "constant"],
+      },
+    ],
+  },
+
+  // --- UI CLEANUP ---
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+  },
+  "project_panel": {
+    "dock": "left",
+    "indent_guides": { "show": "never" },
+    "default_width": 180, // default is 240 — go as low as you want
+    "entry_spacing": "standard", // tighter vertical padding (default is "comfortable")
+    "indent_size": 14, // default is 20 — huge difference on nested folders
+  },
+
+  // --- PERFORMANCE & EXCLUSIONS ---
+  "disable_ai": false,
+  "telemetry": { "diagnostics": false, "metrics": false },
+  "base_keymap": "VSCode",
+  "languages": {
+    "Markdown": {
+      "indent_guides": {
+        "enabled": true,
+      },
+      "show_wrap_guides": true,
+      "hard_tabs": false,
+      "tab_size": 4,
+    },
+    "Python": {
+      "language_servers": ["!ty", "!ruff", "..."],
+    },
+    "JSON": {
+      "soft_wrap": "editor_width",
+    },
+    "YAML": {
+      "soft_wrap": "editor_width",
+    },
+  },
+  "file_scan_exclusions": [
+    "**/.venv",
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/__pycache__",
+    "**/*.pyc",
+    "**/.pytest_cache",
+    "**/.ruff_cache",
+    "**/.mypy_cache",
+    "**/.next",
+    "**/node_modules",
+    "**/.clerk",
+    "**/.swc",
+    "**/.vercel",
+    "**/.ropeproject",
+    "**/.import_linter_cache",
+    ".obsidian",
+  ],
+}

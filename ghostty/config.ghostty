@@ -1,0 +1,13 @@
+theme = "codex"
+keybind = shift+enter=text:\n
+font-family = "JetBrainsMono"
+font-size = 12
+font-thicken = false
+shell-integration-features = sudo,ssh-env,ssh-terminfo
+clipboard-trim-trailing-spaces = true
+mouse-hide-while-typing = true
+macos-titlebar-style = tabs
+window-save-state = always
+adjust-cell-height = 0%
+window-padding-x = 1
+window-padding-y = 1
